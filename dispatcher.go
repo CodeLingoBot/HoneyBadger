@@ -68,7 +68,7 @@ type Dispatcher struct {
 	poolTcpIpv6            map[types.HashedTcpIpv6Flow]ConnectionInterface
 }
 
-// NewInquisitor creates a new Inquisitor struct
+// NewDispatcher creates a new Inquisitor struct
 func NewDispatcher(options DispatcherOptions, connectionFactory ConnectionFactory, packetLoggerFactory types.PacketLoggerFactory) *Dispatcher {
 	i := Dispatcher{
 		PacketLoggerFactory:   packetLoggerFactory,
@@ -102,7 +102,7 @@ func (i *Dispatcher) Stop() {
 	log.Printf("%d connection(s) closed.", closedConns)
 }
 
-// connectionsLocked returns a slice of Connection pointers.
+// Connections returns a slice of Connection pointers.
 func (i *Dispatcher) Connections() []ConnectionInterface {
 	return i.connections()
 }

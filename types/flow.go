@@ -81,7 +81,7 @@ func (t *TcpIpFlow) Equal(s *TcpIpFlow) bool {
 	return t.ipFlow == s.ipFlow && t.tcpFlow == s.tcpFlow
 }
 
-// getPacketFlow returns a TcpIpFlow struct given a byte array packet
+// NewTcpIpFlowFromPacket returns a TcpIpFlow struct given a byte array packet
 func NewTcpIpFlowFromPacket(packet []byte) (*TcpIpFlow, error) {
 	var ip layers.IPv4
 	var tcp layers.TCP
